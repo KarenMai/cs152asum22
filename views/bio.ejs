@@ -1,4 +1,153 @@
+<div class="container mt-5">
+    
+    <div class="row d-flex justify-content-center">
+        
+        <div class="col-md-12">
+            
+            <div class="card p-5 py-9">
+                
+                <div class="text-center">
+                    <img src="https://media-exp1.licdn.com/dms/image/C4E03AQGKKLQ0f7_dcg/profile-displayphoto-shrink_800_800/0/1593793873108?e=1661385600&v=beta&t=eif9NVFkQPH_AAyoKPzjY_fMBHONowvVsTvgBRNtYws" width="100" class="rounded-circle" alt = "Image of Karen Mai">
+                </div>
+                
+                <div class="text-center mt-3">
+                    <span class="bg-secondary p-1 px-4 rounded text-white">Student</span>
+                    <h5 class="mt-2 mb-0">Karen Mai</h5>
+                    <span> Software Development Engineer</span>
+                    
+                    <div class="px-4 mt-1">
+                        <p class="fonts"> Rising sophmore studying Applied Mathematics and Computer Science interested in Machine Learning and how it can be applied to find inequities in the world that childrens face. </p>
+                    
+                    </div>
+                    
+                     <ul class="social-list">
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                        <li><a class="fa fa-github" href = "https://github.com/KarenMai"></a></li>
+                        <li><a class="fa fa-instagram" href = "https://www.instagram.com/mai.karen.mai/"></a></li>
+                        <li><a class="fa fa-linkedin" href = "https://www.linkedin.com/in/maikaren/"></a></li>
+                    </ul>
+                    
+                    <div class="buttons">
+                        <button class="btn btn-outline-primary px-4" onclick="window.location.href='https://linktr.ee/maikaren';">More Links</button>
+                        <button class="btn btn-primary px-4 ms-3" onclick="window.location.href='mailto:karenmai@brandeis.edu?subject=Want to connect'"> Message Me</button>
+                    </div>
+                    
+                    
+                </div>
+                
+               
+                
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
 
-    <h1 class="bg-info">Tim's Bio</h1>
-    <p>I am a former gymnast and juggler!</p>
 
+
+
+
+<style> 
+body{
+    background:#eee;
+}
+
+.card{
+    border:none;
+
+    position:relative;
+    overflow:hidden;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.card:before{
+    
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:4px;
+    height:100%;
+    background-color:#bee4e7;
+    transform:scaleY(1);
+    transition:all 0.5s;
+    transform-origin: bottom
+}
+
+.card:after{
+    
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:4px;
+    height:100%;
+    background-color:#2482aa;
+    transform:scaleY(0);
+    transition:all 0.5s;
+    transform-origin: bottom
+}
+
+.card:hover::after{
+    transform:scaleY(1);
+}
+
+
+.fonts{
+    font-size:11px;
+}
+
+.social-list{
+    display:flex;
+    list-style:none;
+    justify-content:center;
+    padding:0;
+}
+
+.social-list li{
+    padding:10px;
+    color:#2482aa;
+    font-size:19px;
+}
+
+
+.buttons button:nth-child(1){
+       border:1px solid #2482aa !important;
+       color:#2482aa;
+       height:40px;
+}
+
+.buttons button:nth-child(1):hover{
+       border:1px solid #2482aa !important;
+       color:#fff;
+       height:40px;
+       background-color:#2482aa;
+}
+
+.buttons button:nth-child(2){
+       border:1px solid #2482aa !important;
+       background-color:#2482aa;
+       color:#fff;
+        height:40px;
+}
+
+.fa {
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+</style>
+
+
+
+<% /* Credit to this website: https://bbbootstrap.com/snippets/bootstrap-5-user-social-profile-transition-effect-79746232. That is where I got most of this formatting for my bio page! I had to understand it before using it though. */ %>

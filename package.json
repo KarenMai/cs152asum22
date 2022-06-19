@@ -1,7 +1,7 @@
 {
   "name": "app03",
   "version": "0.0.0",
-  "scripts":{
+  "scripts": {
     "start": "node ./bin/www"
   },
   "private": true,
