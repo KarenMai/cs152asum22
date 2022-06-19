@@ -1,0 +1,19 @@
+<h1>Show children charities containing <%= state %></h1>
+
+<% for(charity of charities){%> 
+    <% if(charity.charityName.includes("Youth") || charity.charityName.includes("Children") || charity.charityName.includes("children") || charity.charityName.includes("youth")) { %> 
+        <ul> 
+            <li>
+                <h2><%= charity.charityName %></h2>
+            </li>
+        </ul>
+    <% } %> 
+<% } %>
+
+<% if (charities.length==0) {%>
+<h3>No charity found</h3>
+<% } %>
+
+
+
+

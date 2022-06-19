@@ -1,3 +1,4 @@
+require('dotenv').config()
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -89,60 +90,6 @@ app.use(auth)
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
-app.get('/simpleform',
-  isLoggedIn,
-  (req,res,next) => {
-    res.render('simpleform')
-  })
-
-app.post("/simpleform", 
-  isLoggedIn,
- (req, res, next) => {
-  // res.json(req.body);
-  const { username, age, height } = req.body;
-  res.locals.username = username;
-  res.locals.age = age;
-  res.locals.ageInDays = age * 365;
-  res.locals.height = height;
-  res.locals.heightCm = height * 2.54;
-  res.locals.version = "1.0.0";
-  res.render("simpleformresult");
-});
-
-app.get('/bmi',
-  (req, res, next) => {
-    res.render('bmi')
-  }
-)
-
-app.post('/bmi',
-  (req,res,next) => {
-    const {username, weight, height} = req.body;
-    res.locals.username = username;
-    res.locals.height = height;
-    res.locals.weight = weight;
-    res.locals.BMI = weight/(height*height)*703;
-    res.locals.version = '1.0.0';
-    res.render('bmiresults');
-  }
-)
-
-app.get('/dist',
-  (req, res, next) => {
-    res.render('dist')
-  }
-)
-
-app.post('/dist',
-  (req,res,next) => {
-    const {x,y,z} = req.body;
-    res.locals.x = x
-    res.locals.y = y
-    res.locals.z = z
-    res.locals.d = Math.sqrt(x*x+y*y+z*z)
-    res.render('distResult');
-  }
-)
 const family = [
   {name:'Tim',age:66,},
   {name:'Caitlin',age:27,},
@@ -165,15 +112,31 @@ app.get('/apidemo/:email',
     //res.json(response.data.slice(100,105));
   })
 
-app.get('/exam3b',(req,res,next) => {
-  res.render('exam3b')
+
+
+app.get('/charities',(req,res,next) => {
+  res.render('charities')
 })
 
-app.post('/exam3b',
+
+
+app.post('/charities',
   async (req,res,next) => {
-    res.locals.url = req.body.url;
-    res.render('exam3bShowImage')
-  });
+    console.log(process.env.CHARITY_API_KEY)
+    const state = req.body.state;
+    const url= 'https://api.data.charitynavigator.org/v2/Organizations?app_id=d5c6fc87&app_key=' + process.env.CHARITY_API_KEY + '&state=' + state
+    try { 
+      const response = await axios.get(url)
+      console.dir(response.data)
+      res.locals.state = state
+      res.locals.charities = response.data || []
+      res.render('showCharities')
+    }
+    catch { 
+      return {Error: err.stack}
+    }
+  })
+
 
 app.get('/meals',(req,res,next) => {
   res.render('meals')
