@@ -1,19 +1,23 @@
 <h1>Show children charities containing <%= state %></h1>
 
 <% for(charity of charities){%> 
-    <% if(charity.charityName.includes("Youth") || charity.charityName.includes("Children") || charity.charityName.includes("children") || charity.charityName.includes("youth")) { %> 
+    <% charityName = charity.charityName %> 
+    <% if(charityName.includes("Youth") || charityName.includes("Children") || charityName.includes("children") || charityName.includes("youth")) { %> 
         <ul> 
             <li>
-                <h2><%= charity.charityName %></h2>
+                <a href = <%= charity.charityNavigatorURL %>> <h2><%= charity.charityName %> </h2></a> 
+                <% if (charity.irsClassification.nteeType != null) { %>
+                    <h5><%= charity.irsClassification.nteeType %> </h5>
+                <% } %>
+                <a class="btn btn-dark btn-sm" href= "./routes/addToList/:charityName"> Add to List </a>
             </li>
         </ul>
     <% } %> 
 <% } %>
 
 <% if (charities.length==0) {%>
-<h3>No charity found</h3>
+<h3>No charity found </h3>
 <% } %>
 
 
-
-
+<h5> To return to the search tool, click here: <a class="btn btn-dark btn-sm" href="/charities"> finding charities </a> </h5>

@@ -1,0 +1,22 @@
+<div class="bg-light border border-primary p-3 rounded m-3">
+    <h1 class="display-4 text-center">Interest List of Charities Focused on Youth</h1>
+    <p class="lead text-center"><%= charities.length %>  charities <%= user['username'] %> is interested in</p>
+</div>
+<hr>
+<ol>
+    <% for (item of charities){%>
+        <li class="mb-2">          
+            <b> <%= item.name%>: </b> <i> <%= item.type %></i>
+            <br>
+            <%= item.createdAt %> 
+            <a href="/charitiesRecord/delete/<%= item._id%>">(delete)</a>
+        </li>
+    <% }%>
+</ol>
+<hr>
+
+<form method="post" action="/charitiesRecord/add">
+    charity:<input type="text" name="name"><br>
+    type:<input type="text" name="type"><br>    
+    <input type="submit" value="Save Charity"><br>
+</form>
