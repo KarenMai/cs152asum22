@@ -1,6 +1,6 @@
 # cs152asum22
 
-This prohect is for: web Application Development (COSI-152A)
+This project is for: web Application Development (COSI-152A)
 
 - This app is focused on getting people a list of charities that is focused on youth. People can then save these places to their list of interest and hopefully they can come back to this and want to help these charities out after discovering it on this app. I used mongodb to store the data for the list. There was an API to get the charities. Then I also had authentication to make sure people were only adding to their own list.
 
