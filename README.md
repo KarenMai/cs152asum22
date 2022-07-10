@@ -16,7 +16,7 @@ Authentication times: look into the routes with the auth
 Written Communication: currently demonstrating it here
 
 <h4> How to install this app: </h4> 
-1) Need to get all the dependancies by installing the packages: `npm install `
+1) Need to get all the dependancies by installing the packages: ```npm install ```
 2) To let the website run: `nodemon`
 
 
