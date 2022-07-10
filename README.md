@@ -51,24 +51,11 @@ nodemon
 
 
 <h6> I mastered the following for this project: </h6>
-1) Running Express Apps: running it through nodemon
-
-
-2) Core HTML and Bootstrap: check out BIO
-
-
-3) API access times: see app.js
-
-
-4) EJS control flow times: check some fo the views
-
-
-5) Spoken Communication times: recorded several times
-
-
-6) Database Interaction: look at the views to see the part that saves the list
-
-
-7) A uthentication times: look into the routes with the auth
-
-8) Written Communication: currently demonstrating it here
+Running Express Apps: running it through nodemon
+Core HTML and Bootstrap: check out BIO
+API access times: see app.js
+EJS control flow times: check some fo the views
+Spoken Communication times: recorded several times
+Database Interaction: look at the views to see the part that saves the list
+Authentication times: look into the routes with the auth
+Written Communication: currently demonstrating it here
