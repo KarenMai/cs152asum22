@@ -18,11 +18,13 @@ Written Communication: currently demonstrating it here
 <h4> How to install this app: </h4> 
 1) Need to get all the dependancies by installing the packages: npm install 
 2) To let the website run: nodemon
+
+
 *** Do note that when you are directly pulling from github in app.js there is process.env.CHARITY_API_KEY and I have stored this key in my .env which I had added in my gitignore that I would share because there is a limit to my API. 
 
 
-####Here are the dependancies and they can also be found in the package.json
-{
+<h4> Here are the dependancies and they can also be found in the package.json  </h4> 
+`{
   "name": "app03",
   "version": "0.0.0",
   "scripts": {
@@ -44,4 +46,4 @@ Written Communication: currently demonstrating it here
     "mongoose": "^6.3.8",
     "morgan": "~1.9.1"
   }
-}
+}`
